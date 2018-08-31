@@ -1,10 +1,10 @@
 ---
 - name: ensure zookeeper group exists
-  sudo: yes
+  become: yes
   group: name={{ zookeeper_group }} state=present system=yes
 
 - name: ensure zookeeper user exists
-  sudo: yes
+  become: yes
   user: name={{ zookeeper_user }} groups={{ zookeeper_group }} state=present append=yes
 
 - name: install zookeeper by specific os
